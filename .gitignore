@@ -1,7 +1,8 @@
 venv/
 config.py
-.idea/
 res/images/
 res/videos/
 __pycache__/
 *.pyc
+.idea/
+   
