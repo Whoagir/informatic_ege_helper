@@ -1,0 +1,17 @@
+data = [int(x) for x in open('17-243.txt')]
+
+ref = max( x for x in data if x % 119 == 0 )
+
+def nCond( arr, func ):
+  b = [func(a) for a in arr]
+  return b.count( True )
+
+count, ma = 0, 0
+for i, n in enumerate(data):
+   if i > 0:
+     pair = data[i-1:i+1]
+     if nCond( pair, lambda x: x < ref ) >= 2:
+        ma = max( ma, sum(pair) )
+        count += 1
+
+print( count, ma )
